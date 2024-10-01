@@ -6,16 +6,26 @@ import Home from './assets/Home'
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  const [darkmode,setDarkmode]=useState()
+
+
+  const toggleDarkMode = () => {
+    setDarkmode(!darkmode);
+  };
 
   const OpenSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle)
-  }
+  } 
+  const appStyle = {
+    backgroundColor: darkmode ? ' #1d2634' : '#fff',
+    color: darkmode ? '#fff' : ' #1d2634',
+  };
 
   return (
-    <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar}/>
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Home />
+    <div style={appStyle} className='grid-container'>
+      <Header OpenSidebar={OpenSidebar} darkmode={darkmode} toggleDarkMode={toggleDarkMode} />
+      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} darkmode={darkmode} />  
+      <Home darkmode={darkmode} />
     </div>
   )
 }

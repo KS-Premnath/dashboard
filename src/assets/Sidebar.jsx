@@ -4,7 +4,8 @@ import
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
  from 'react-icons/bs'
 
-function Sidebar({openSidebarToggle, OpenSidebar}) {
+function Sidebar({openSidebarToggle, OpenSidebar,toggleDarkMode}) {
+    
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>

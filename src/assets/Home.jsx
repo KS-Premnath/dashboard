@@ -1,12 +1,12 @@
 import React from 'react'
 import 
-{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
+{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill,}
  from 'react-icons/bs'
  import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
+ { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
 
-function Home() {
+function Home(toggleDarkMode) {
 
     const data = [
         {
@@ -57,7 +57,7 @@ function Home() {
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <h3>DASHBOARD</h3>
+            <h3 className='dash'>DASHBOARD</h3>
         </div>
 
         <div className='main-cards'>
@@ -135,9 +135,10 @@ function Home() {
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
             </ResponsiveContainer>
-
         </div>
-    </main>
+        <p className='para'>@Reserved by Maho Jase</p>
+       </main>
+
   )
 }
 
